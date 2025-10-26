@@ -205,3 +205,7 @@ Feel free to contribute to this project by:
 ## Support
 
 If you encounter any issues or have questions, please create an issue in the project repository.
+
+## Why I made this app
+
+This app was inspired by how the racing game by Planet Jem NIGHT-RUNNERS™ PROLOGUE handles sound, where the faster you go the louder the music is, giving you more of a sense of speed.
