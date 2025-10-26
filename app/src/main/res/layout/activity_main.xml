@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/background_color"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Speed-Based Volume Control"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Mode Selection -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/mode_card_background"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Mode"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="12dp" />
+
+        <RadioGroup
+            android:id="@+id/modeRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/carModeRadio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Car"
+                android:textSize="12sp"
+                android:textColor="@color/primary_text"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/bikeModeRadio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bike"
+                android:textSize="12sp"
+                android:textColor="@color/primary_text" />
+
+            <RadioButton
+                android:id="@+id/joggerModeRadio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Jogger"
+                android:textSize="12sp"
+                android:textColor="@color/primary_text" />
+
+            <RadioButton
+                android:id="@+id/walkingModeRadio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Walking"
+                android:textSize="12sp"
+                android:textColor="@color/primary_text" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/modeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Car Mode: 5-120 km/h speed range"
+            android:textSize="14sp"
+            android:textColor="@color/secondary_text"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <!-- Speed Display -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/speed_card_background"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:id="@+id/speedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Speed: 0.0 km/h"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/speed_text"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/gpsStatusTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GPS: Checking..."
+            android:textSize="14sp"
+            android:textColor="@color/secondary_text"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current speed detected by GPS"
+            android:textSize="14sp"
+            android:textColor="@color/secondary_text"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Volume Display -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/volume_card_background"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:id="@+id/volumeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Volume: 50%"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/volume_text"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volume adjusts automatically based on speed"
+            android:textSize="14sp"
+            android:textColor="@color/secondary_text"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Volume Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/controls_card_background"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volume Range Settings"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Min Volume Control -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Min Volume:"
+                android:textSize="16sp"
+                android:textColor="@color/primary_text" />
+
+            <TextView
+                android:id="@+id/minVolumeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textSize="16sp"
+                android:textColor="@color/primary_text"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/minVolumeSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="0"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Max Volume Control -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Max Volume:"
+                android:textSize="16sp"
+                android:textColor="@color/primary_text" />
+
+            <TextView
+                android:id="@+id/maxVolumeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textSize="16sp"
+                android:textColor="@color/primary_text"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/maxVolumeSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="100" />
+
+    </LinearLayout>
+
+    <!-- Start/Stop Button -->
+    <Button
+        android:id="@+id/startStopButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Start Speed Control"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp" />
+
+    <!-- Instructions -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instructions:\n• Grant location and settings permissions\n• Set your preferred volume range\n• Press Start to begin automatic volume control\n• The faster you go, the louder it gets!"
+        android:textSize="14sp"
+        android:textColor="@color/secondary_text"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:lineSpacingExtra="4dp" />
+
+</LinearLayout>
