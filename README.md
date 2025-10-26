@@ -154,6 +154,7 @@ else:
 - Always prioritize road safety over volume adjustments
 - Consider using this app with hands-free devices
 - The app should not distract from driving
+- I am not responsible for any deaths or accidents, this readme is legally binding
 
 ## Troubleshooting
 
